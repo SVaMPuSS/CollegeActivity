@@ -29,12 +29,10 @@ public class EventAdapter extends ArrayAdapter<Events> {
     public View getView(int position,View convertView, ViewGroup parent) {
         Events ev = getItem( position );
         convertView = LayoutInflater.from( getContext() ).inflate( R.layout.my_simple_item,null );
-        TextView tvName = convertView.findViewById( R.id.tvEventName );
+        TextView tvName = convertView.findViewById( R.id.tvEventInfo );
         tvName.setText( ev.getName() );
-        TextView tvStart = convertView.findViewById( R.id.tvEventTimeStart );
-        tvStart.setText( ev.getDateStart() );
-        TextView tvEnd = convertView.findViewById( R.id.tvEventTimeEnd );
-        tvEnd.setText( ev.getDateEnd() );
+        TextView tvStart = convertView.findViewById( R.id.tvEventDateStartEnd );
+        tvStart.setText( ev.getDateStart() +"\n"+ev.getDateEnd());
         Button bChange = convertView.findViewById( R.id.bItemChange );
         bChange.setOnClickListener( new View.OnClickListener() {
             @Override
