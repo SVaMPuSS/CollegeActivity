@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/cardview_dark_background">
+
+    <Spinner
+        android:id="@+id/sType"
+        android:layout_height="50dp"
+        android:layout_width="200dp"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bNew"
+        android:entries="@array/myArray"/>
+
+    <Button
+        android:id="@+id/bNew"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/sType"
+        app:layout_constraintRight_toLeftOf="@id/bChange"
+        app:layout_constraintTop_toTopOf="@id/sType"
+        app:layout_constraintBottom_toBottomOf="@id/sType"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="+"/>
+
+    <Button
+        android:id="@+id/bChange"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/bNew"
+        app:layout_constraintRight_toLeftOf="@id/bDelete"
+        app:layout_constraintTop_toTopOf="@id/sType"
+        app:layout_constraintBottom_toBottomOf="@id/sType"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="I"/>
+
+    <Button
+        android:id="@+id/bDelete"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/bChange"
+        app:layout_constraintTop_toTopOf="@id/sType"
+        app:layout_constraintBottom_toBottomOf="@id/sType"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="X"/>
+
+    <ListView
+        android:id="@+id/lvEvent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sType"
+        app:layout_constraintBottom_toTopOf="@id/bAdd"
+        android:entries="@array/myArray"/>
+
+    <Button
+        android:id="@+id/bAdd"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="Добавить"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
